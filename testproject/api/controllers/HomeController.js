@@ -23,9 +23,9 @@ module.exports = {
    *    `/home/loginsuccess`
    */
    loginsuccess: function (req, res) {
-
-      var username = req.query.name;
-        res.view({name:username});
+      var accesstoken="abc";
+      var username="fjdhkf";
+        res.view({can:username,access:accesstoken});
   },
 
 

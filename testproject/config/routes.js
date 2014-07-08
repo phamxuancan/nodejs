@@ -52,7 +52,7 @@ module.exports.routes = {
         view:'home/upload'
     },
     'post /upload':'FileController.upload',
-    'get /loginsuccess':'Home.loginsuccess'
+    'get /loginsuccess':'HomeController.loginsuccess'
 /*
   // Let's say you're building an email client, like Gmail
   // You might want your home route to serve an interface using custom logic.

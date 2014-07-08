@@ -6,7 +6,7 @@ module.exports = {
   config: {
     user: 'root',
     password: '',
-    database: 'nodejs',
+    database: 'english',
     host: '127.0.0.1'
   },
 

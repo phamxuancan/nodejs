@@ -35,7 +35,7 @@ module.exports = {
                     }else{
                             if(user){
                                 // console.log(user.name);
-                                 res.redirect("/loginsuccess?name="+user.name);
+                                 res.redirect("/loginsuccess");
                             }else
                             {
                                 console.log("User not found:");
@@ -54,9 +54,21 @@ module.exports = {
     // Send a JSON response
     username=req.body.username;
 	password=req.body.password;
+    var d=new Date();
+    var seconds= d.getSeconds();
+    var minute = d.getMinutes();
+    var houre = d.getHours();
+    var day = d.getDay();
+    var date= d.getDate();
+    var year= d.getFullYear();
+    var randomNum=sails.models.ultils.getRandomString(32);
+    dateString=seconds+':'+minute+':'+houre+' '+day+'/'+date+'/'+year;
 	User.create({
 		  name: username,
-		  pass: password
+		  pass: password,
+          accesstoken:randomNum,
+          createdAt:dateString,
+          updatedAt:dateString
 		}).done(function(err, user) {
 
 		  // Error handling
@@ -65,7 +77,7 @@ module.exports = {
 
 		  // The User was created successfully!
 		  }else {
-			console.log("User created:", user);
+			res.redirect('dictionnary?accessToken='+randomNum);
 		  }
 		});
   },
