@@ -35,13 +35,12 @@ module.exports = {
                     }else{
                             if(user){
                                 // console.log(user.name);
-                                 res.redirect("/loginsuccess");
+                                 res.redirect("/dictionary?accessToken="+user.accesstoken);
                             }else
                             {
                                 console.log("User not found:");
                             }
                     }
-
                 });
   },
 

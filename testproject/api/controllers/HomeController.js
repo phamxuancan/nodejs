@@ -22,11 +22,15 @@ module.exports = {
    * Action blueprints:
    *    `/home/loginsuccess`
    */
-   loginsuccess: function (req, res) {
-      var accesstoken="abc";
+   dictionary: function (req, res) {
+      var accesstoken=req.query.accessToken;
       var username="fjdhkf";
         res.view({can:username,access:accesstoken});
   },
+    addWord:function(req,res){
+        var accesstoken=req.query.accessToken;
+        res.view({accessToken:accesstoken});
+    },
 
 
 
